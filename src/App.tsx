@@ -8,6 +8,13 @@ import { Chat } from "./components/chating/Chat";
 import { MyProvider } from "./contexts/MyContext";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
+
+const host = window.location.hostname === "localhost" ? "http://{your server URL}" : "api";
+
+export const apiClient = axios.create({
+  baseURL: host,
+});
 
 export const App = () => {
   const queryClient = new QueryClient();
@@ -26,6 +33,4 @@ export const App = () => {
       </MyProvider>
     </>
   );
-
 };
-

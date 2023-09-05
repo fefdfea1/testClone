@@ -1,5 +1,4 @@
 import axios from "axios";
-
 import type { MyOfficeResponse } from "../../pages/agent/agentTypes";
 
 export const fetchMyOfficeData = async (): Promise<MyOfficeResponse> => {
@@ -11,7 +10,6 @@ export const fetchReviewsData = async (): Promise<MyOfficeResponse> => {
   const response = await axios.get("https://my-json-server.typicode.com/kjewt/json-server/reviews");
   return response.data;
 };
-
 
 // 지금은 모두 같지만 추후 url을 변경해야합니다.
 
@@ -26,4 +24,3 @@ export const fetchBookingData = () =>
 
 export const fetchMyPageData = () =>
   axios.get("https://my-json-server.typicode.com/fefdfea1/jsonData2/db").then(res => res.data);
-
